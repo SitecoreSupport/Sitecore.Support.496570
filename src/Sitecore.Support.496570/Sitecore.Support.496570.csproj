@@ -46,9 +46,8 @@
       <HintPath>..\packages\SC.Sitecore.ContentSearch.9.0.2\lib\Sitecore.ContentSearch.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Azure, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SC.Sitecore.ContentSearch.Azure.9.0.2\lib\Sitecore.ContentSearch.Azure.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Sitecore.ContentSearch.Azure">
+      <HintPath>..\..\lib\Sitecore.ContentSearch.Azure.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\packages\SC.Sitecore.Kernel.9.0.2\lib\Sitecore.Kernel.dll</HintPath>

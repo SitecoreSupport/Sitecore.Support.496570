@@ -23,6 +23,7 @@ namespace Sitecore.Support.ContentSearch.Azure
             typeof(Sitecore.ContentSearch.Azure.CloudSearchProviderIndex).GetProperty("RebuildCloudIndexName",
                 BindingFlags.Instance | BindingFlags.NonPublic);
 
+        [Obsolete]
         public CloudSearchProviderIndex(string name, string connectionStringName, string totalParallelServices, IIndexPropertyStore propertyStore) 
             : base(name, connectionStringName, totalParallelServices, propertyStore)
         {
@@ -31,12 +32,18 @@ namespace Sitecore.Support.ContentSearch.Azure
             _oldIndexCleanUpDelay = settings.OldIndexCleanUpDelay;
         }
 
+        [Obsolete]
         protected internal CloudSearchProviderIndex(string name, string connectionStringName, string totalParallelServices, IIndexPropertyStore propertyStore, string @group, ServiceCollectionClient serviceCollectionClient)
             : base(name, connectionStringName, totalParallelServices, propertyStore, @group, serviceCollectionClient)
         {
             var settings = this.ServiceCollectionClient.GetInstance<Settings>();
             _switchOnRebuild = settings.SwitchOnRebuild;
             _oldIndexCleanUpDelay = settings.OldIndexCleanUpDelay;
+        }
+
+        public CloudSearchProviderIndex(string name, string connectionStringName, string totalParallelServices, IIndexPropertyStore propertyStore, ICloudSearchProviderIndexName cloudSearchProviderIndexName) 
+            : base(name, connectionStringName, totalParallelServices, propertyStore, cloudSearchProviderIndexName)
+        {
         }
 
         protected override void PerformRebuild(IndexingOptions indexingOptions, CancellationToken cancellationToken)
