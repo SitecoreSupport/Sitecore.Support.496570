@@ -60,6 +60,7 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentSearch\Azure\CloudSearchIndexOperations.cs" />
     <Compile Include="ContentSearch\Azure\Events\RebuildEvents\SwitchOnRebuildEventHandler.cs" />
     <Compile Include="ContentSearch\Azure\CloudSearchProviderIndex.cs" />
     <Compile Include="ContentSearch\Azure\Events\RebuildEvents\EventRaiser.cs" />

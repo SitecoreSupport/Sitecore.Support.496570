@@ -46,6 +46,8 @@ namespace Sitecore.Support.ContentSearch.Azure
         {
         }
 
+        public override IIndexOperations Operations => new Sitecore.Support.ContentSearch.Azure.CloudSearchIndexOperations(this);
+
         protected override void PerformRebuild(IndexingOptions indexingOptions, CancellationToken cancellationToken)
         {
             if (!this.ShouldStartIndexing(indexingOptions))
